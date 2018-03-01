@@ -12,6 +12,8 @@
 		EE79AEC02048942E00DC6FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEBE2048942E00DC6FDE /* Main.storyboard */; };
 		EE79AEC22048942F00DC6FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEC12048942F00DC6FDE /* Assets.xcassets */; };
 		EE79AEC52048942F00DC6FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEC32048942F00DC6FDE /* LaunchScreen.storyboard */; };
+		EE79AECD2048946B00DC6FDE /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AECC2048946B00DC6FDE /* Topic.swift */; };
+		EE79AED02048947C00DC6FDE /* TopicGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AECF2048947C00DC6FDE /* TopicGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		EE79AEC12048942F00DC6FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE79AEC42048942F00DC6FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE79AEC62048942F00DC6FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE79AECC2048946B00DC6FDE /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		EE79AECF2048947C00DC6FDE /* TopicGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		EE79AEB92048942E00DC6FDE /* Studis */ = {
 			isa = PBXGroup;
 			children = (
+				EE79AECE2048946F00DC6FDE /* Model */,
 				EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */,
 				EE79AEBC2048942E00DC6FDE /* ViewController.swift */,
 				EE79AEBE2048942E00DC6FDE /* Main.storyboard */,
@@ -62,6 +67,15 @@
 				EE79AEC62048942F00DC6FDE /* Info.plist */,
 			);
 			path = Studis;
+			sourceTree = "<group>";
+		};
+		EE79AECE2048946F00DC6FDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE79AECC2048946B00DC6FDE /* Topic.swift */,
+				EE79AECF2048947C00DC6FDE /* TopicGraph.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE79AED02048947C00DC6FDE /* TopicGraph.swift in Sources */,
 				EE79AEBD2048942E00DC6FDE /* ViewController.swift in Sources */,
+				EE79AECD2048946B00DC6FDE /* Topic.swift in Sources */,
 				EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
