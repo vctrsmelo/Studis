@@ -10,6 +10,7 @@ import Foundation
 
 protocol TopicsManager {
     func addTopic(name: String)
-    func getNextTopic()
-    func getNextTopics(quantity: Int)
+    func getNextTopic() -> Topic?
+    func getNextTopics(quantity: Int) -> [Topic]
+    func deleteTopic(named: String)
 }
