@@ -15,10 +15,8 @@ struct Topic: Codable {
     var lastReview: TimeInterval?
     
     var orderWeight: Double {
-        
         let lastReviewWeight = lastReview ?? 0
         return Double(reviewsCount)*(100*lastReviewWeight/Date().timeIntervalSince1970)
-        
     }
 }
 

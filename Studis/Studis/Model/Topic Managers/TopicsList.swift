@@ -60,6 +60,7 @@ extension TopicsList: TopicsManager {
         
         for i in 0 ..< topics.count where topics[i].name == named {
             _topics.remove(at: i)
+            break
         }
     }
     

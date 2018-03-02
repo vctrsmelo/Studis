@@ -28,7 +28,7 @@ class StudisTests: XCTestCase {
         XCTAssertNotNil(topicsManager.topics.first { $0.name == "CloudKit" })
     }
     
-    func testTopicsListgetNextTopic() {
+    func testTopicsListGetNextTopic_oneTopic() {
         topicsManager.addTopic(name: "Core Data")
         var topic = topicsManager.getNextTopic()
         XCTAssertNotNil(topic)
@@ -37,5 +37,50 @@ class StudisTests: XCTestCase {
         topic = topicsManager.topics.first(where: {$0.name == topic!.name })
         
         XCTAssertEqual(topic?.reviewsCount, 1)
+    }
+    
+    func testTopicsListGetNextTopic_multipleTopics() {
+        topicsManager.addTopic(name: "Core Data")
+        topicsManager.addTopic(name: "CloudKit")
+
+        let topic1 = topicsManager.getNextTopic()
+        
+        sleep(4)
+
+        let topic2 = self.topicsManager.getNextTopic()
+        XCTAssertNotEqual(topic1, topic2)
+        
+        let topic1Again = self.topicsManager.getNextTopic()
+        XCTAssertEqual(topic1!.name, topic1Again!.name)
+    }
+    
+//    func addTopic(name: String)
+//    func getNextTopic() -> Topic?
+//    func getNextTopics(quantity: Int) -> [Topic]
+//    func deleteTopic(named: String)
+    
+    func testTopicsListGetNextTopics() {
+        topicsManager.addTopic(name: "Core Data")
+        topicsManager.addTopic(name: "CloudKit")
+        
+        XCTAssertEqual(topicsManager.topics.count, 2)
+
+        topicsManager.topics.forEach {
+            XCTAssertTrue($0.name == "Core Data" || $0.name == "CloudKit")
+        }
+    }
+    
+    func testTopicsListDeleteTopic() {
+        topicsManager.addTopic(name: "Core Data")
+        topicsManager.addTopic(name: "CloudKit")
+        
+        let topic1 = topicsManager.getNextTopic()
+        XCTAssertEqual(topic1!.name, "Core Data")
+        
+        topicsManager.deleteTopic(named: "CloudKit")
+
+        let topic1Again = topicsManager.getNextTopic()
+        
+        XCTAssertEqual(topic1Again!.name, topic1!.name)
     }
 }
