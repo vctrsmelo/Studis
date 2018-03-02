@@ -7,16 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE45589920495A8500909B03 /* TopicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45589820495A8500909B03 /* TopicsManager.swift */; };
+		BE4558A720495B7200909B03 /* StudisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4558A620495B7200909B03 /* StudisTests.swift */; };
+		BE4558B22049663E00909B03 /* TopicsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4558B12049663E00909B03 /* TopicsList.swift */; };
 		EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */; };
 		EE79AEBD2048942E00DC6FDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBC2048942E00DC6FDE /* ViewController.swift */; };
 		EE79AEC02048942E00DC6FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEBE2048942E00DC6FDE /* Main.storyboard */; };
 		EE79AEC22048942F00DC6FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEC12048942F00DC6FDE /* Assets.xcassets */; };
 		EE79AEC52048942F00DC6FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEC32048942F00DC6FDE /* LaunchScreen.storyboard */; };
 		EE79AECD2048946B00DC6FDE /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AECC2048946B00DC6FDE /* Topic.swift */; };
-		EE79AED02048947C00DC6FDE /* TopicGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AECF2048947C00DC6FDE /* TopicGraph.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BE4558A920495B7200909B03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE79AEAF2048942E00DC6FDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE79AEB62048942E00DC6FDE;
+			remoteInfo = Studis;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		BE45589820495A8500909B03 /* TopicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsManager.swift; sourceTree = "<group>"; };
+		BE4558A420495B7200909B03 /* StudisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4558A620495B7200909B03 /* StudisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudisTests.swift; sourceTree = "<group>"; };
+		BE4558A820495B7200909B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE4558B12049663E00909B03 /* TopicsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsList.swift; sourceTree = "<group>"; };
 		EE79AEB72048942E00DC6FDE /* Studis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Studis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE79AEBC2048942E00DC6FDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,10 +42,16 @@
 		EE79AEC42048942F00DC6FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE79AEC62048942F00DC6FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE79AECC2048946B00DC6FDE /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
-		EE79AECF2048947C00DC6FDE /* TopicGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BE4558A120495B7200909B03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE79AEB42048942E00DC6FDE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +62,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE45589A20495A8900909B03 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BE45589820495A8500909B03 /* TopicsManager.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BE45589B20495A9800909B03 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE79AEBC2048942E00DC6FDE /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BE45589C20495AA400909B03 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		BE45589D20495AAE00909B03 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EE79AEC32048942F00DC6FDE /* LaunchScreen.storyboard */,
+				EE79AEBE2048942E00DC6FDE /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		BE45589E20495ABD00909B03 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE79AEC12048942F00DC6FDE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE45589F20495AF200909B03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE79AEC62048942F00DC6FDE /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE4558A520495B7200909B03 /* StudisTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE4558A620495B7200909B03 /* StudisTests.swift */,
+				BE4558A820495B7200909B03 /* Info.plist */,
+			);
+			path = StudisTests;
+			sourceTree = "<group>";
+		};
+		BE4558AE2049637A00909B03 /* Topic Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BE4558B12049663E00909B03 /* TopicsList.swift */,
+			);
+			path = "Topic Managers";
+			sourceTree = "<group>";
+		};
 		EE79AEAE2048942E00DC6FDE = {
 			isa = PBXGroup;
 			children = (
 				EE79AEB92048942E00DC6FDE /* Studis */,
+				BE4558A520495B7200909B03 /* StudisTests */,
 				EE79AEB82048942E00DC6FDE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				EE79AEB72048942E00DC6FDE /* Studis.app */,
+				BE4558A420495B7200909B03 /* StudisTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +149,12 @@
 		EE79AEB92048942E00DC6FDE /* Studis */ = {
 			isa = PBXGroup;
 			children = (
+				BE45589C20495AA400909B03 /* Application Delegate */,
 				EE79AECE2048946F00DC6FDE /* Model */,
-				EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */,
-				EE79AEBC2048942E00DC6FDE /* ViewController.swift */,
-				EE79AEBE2048942E00DC6FDE /* Main.storyboard */,
-				EE79AEC12048942F00DC6FDE /* Assets.xcassets */,
-				EE79AEC32048942F00DC6FDE /* LaunchScreen.storyboard */,
-				EE79AEC62048942F00DC6FDE /* Info.plist */,
+				BE45589B20495A9800909B03 /* View Controllers */,
+				BE45589D20495AAE00909B03 /* Storyboard */,
+				BE45589E20495ABD00909B03 /* Resources */,
+				BE45589F20495AF200909B03 /* Supporting Files */,
 			);
 			path = Studis;
 			sourceTree = "<group>";
@@ -72,8 +162,9 @@
 		EE79AECE2048946F00DC6FDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE45589A20495A8900909B03 /* Protocols */,
+				BE4558AE2049637A00909B03 /* Topic Managers */,
 				EE79AECC2048946B00DC6FDE /* Topic.swift */,
-				EE79AECF2048947C00DC6FDE /* TopicGraph.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,6 +172,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BE4558A320495B7200909B03 /* StudisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE4558AB20495B7300909B03 /* Build configuration list for PBXNativeTarget "StudisTests" */;
+			buildPhases = (
+				BE4558A020495B7200909B03 /* Sources */,
+				BE4558A120495B7200909B03 /* Frameworks */,
+				BE4558A220495B7200909B03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE4558AA20495B7200909B03 /* PBXTargetDependency */,
+			);
+			name = StudisTests;
+			productName = StudisTests;
+			productReference = BE4558A420495B7200909B03 /* StudisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EE79AEB62048942E00DC6FDE /* Studis */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE79AEC92048942F00DC6FDE /* Build configuration list for PBXNativeTarget "Studis" */;
@@ -88,6 +197,7 @@
 				EE79AEB32048942E00DC6FDE /* Sources */,
 				EE79AEB42048942E00DC6FDE /* Frameworks */,
 				EE79AEB52048942E00DC6FDE /* Resources */,
+				BE4558AF2049650B00909B03 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -108,6 +218,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Victor S Melo";
 				TargetAttributes = {
+					BE4558A320495B7200909B03 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EE79AEB62048942E00DC6FDE;
+					};
 					EE79AEB62048942E00DC6FDE = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -128,11 +243,19 @@
 			projectRoot = "";
 			targets = (
 				EE79AEB62048942E00DC6FDE /* Studis */,
+				BE4558A320495B7200909B03 /* StudisTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BE4558A220495B7200909B03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE79AEB52048942E00DC6FDE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,19 +268,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BE4558AF2049650B00909B03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		BE4558A020495B7200909B03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4558A720495B7200909B03 /* StudisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE79AEB32048942E00DC6FDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE79AED02048947C00DC6FDE /* TopicGraph.swift in Sources */,
 				EE79AEBD2048942E00DC6FDE /* ViewController.swift in Sources */,
 				EE79AECD2048946B00DC6FDE /* Topic.swift in Sources */,
+				BE4558B22049663E00909B03 /* TopicsList.swift in Sources */,
+				BE45589920495A8500909B03 /* TopicsManager.swift in Sources */,
 				EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE4558AA20495B7200909B03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE79AEB62048942E00DC6FDE /* Studis */;
+			targetProxy = BE4558A920495B7200909B03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EE79AEBE2048942E00DC6FDE /* Main.storyboard */ = {
@@ -179,6 +335,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BE4558AC20495B7300909B03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				INFOPLIST_FILE = StudisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.StudisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Studis.app/Studis";
+			};
+			name = Debug;
+		};
+		BE4558AD20495B7300909B03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y93HUJS49V;
+				INFOPLIST_FILE = StudisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.StudisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Studis.app/Studis";
+			};
+			name = Release;
+		};
 		EE79AEC72048942F00DC6FDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -292,7 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = Studis/Info.plist;
+				INFOPLIST_FILE = "Studis/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.Studis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,7 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
-				INFOPLIST_FILE = Studis/Info.plist;
+				INFOPLIST_FILE = "Studis/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.Studis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -319,6 +507,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BE4558AB20495B7300909B03 /* Build configuration list for PBXNativeTarget "StudisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4558AC20495B7300909B03 /* Debug */,
+				BE4558AD20495B7300909B03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EE79AEB22048942E00DC6FDE /* Build configuration list for PBXProject "Studis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
