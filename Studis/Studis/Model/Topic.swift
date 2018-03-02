@@ -9,13 +9,27 @@
 import Foundation
 
 struct Topic: Codable {
+    
     var name: String
     var reviewsCount: Int
-    var lastReview: TimeInterval
+    var lastReview: TimeInterval?
     
     var orderWeight: Double {
-        return Double(reviewsCount)*(100*lastReview/Date().timeIntervalSince1970)
+        
+        let lastReviewWeight = lastReview ?? 0
+        return Double(reviewsCount)*(100*lastReviewWeight/Date().timeIntervalSince1970)
+        
     }
+}
+
+extension Topic {
+    
+    init(name: String, reviewsCount: Int) {
+        self.name = name
+        self.reviewsCount = reviewsCount
+        self.lastReview = nil
+    }
+    
 }
 
 extension Topic: Comparable {

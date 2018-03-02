@@ -7,29 +7,35 @@
 //
 
 import XCTest
+@testable import Studis
 
 class StudisTests: XCTestCase {
     
+    var topicsManager: TopicsManager!
+    
     override func setUp() {
+        topicsManager = TopicsList()
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        topicsManager = nil
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testTopicsListAddTopic() {
+        topicsManager.addTopic(name: "CloudKit")
+        XCTAssertNotNil(topicsManager.topics.first { $0.name == "CloudKit" })
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testTopicsListgetNextTopic() {
+        topicsManager.addTopic(name: "Core Data")
+        var topic = topicsManager.getNextTopic()
+        XCTAssertNotNil(topic)
+        XCTAssertEqual(topic!.name, "Core Data")
+        
+        topic = topicsManager.topics.first(where: {$0.name == topic!.name })
+        
+        XCTAssertEqual(topic?.reviewsCount, 1)
     }
-    
 }

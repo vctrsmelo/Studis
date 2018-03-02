@@ -9,6 +9,9 @@
 import Foundation
 
 protocol TopicsManager {
+    
+    var topics: [Topic] { get }
+    
     func addTopic(name: String)
     func getNextTopic() -> Topic?
     func getNextTopics(quantity: Int) -> [Topic]

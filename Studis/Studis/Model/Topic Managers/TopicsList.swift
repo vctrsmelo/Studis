@@ -10,9 +10,9 @@ import Foundation
 
 class TopicsList {
     
-    private var topics: [Topic] = [] {
+    private var _topics: [Topic] = [] {
         didSet {
-            topics = topics.sorted()
+            _topics = _topics.sorted()
         }
     }
     
@@ -20,17 +20,24 @@ class TopicsList {
 
 extension TopicsList: TopicsManager {
     
+    var topics: [Topic] {
+        return _topics
+    }
+    
     func addTopic(name: String) {
-        let topic = Topic(name: name, reviewsCount: 0, lastReview: 1)
-        topics.append(topic)
-
+        let topic = Topic(name: name, reviewsCount: 0)
+        _topics.append(topic)
     }
     
     func getNextTopic() -> Topic? {
         guard var nextTopic = topics.first else { return nil }
+        _topics.remove(at: 0)
+        
         nextTopic.reviewsCount += 1
         nextTopic.lastReview = Date().timeIntervalSince1970
-        return topics.first
+        _topics.append(nextTopic)
+        
+        return nextTopic
     }
     
     func getNextTopics(quantity: Int) -> [Topic] {
@@ -44,7 +51,7 @@ extension TopicsList: TopicsManager {
             selectedTopics[i].reviewsCount += 1
         }
         
-        self.topics.append(contentsOf: selectedTopics)
+        self._topics.append(contentsOf: selectedTopics)
         
         return selectedTopics
     }
@@ -52,9 +59,8 @@ extension TopicsList: TopicsManager {
     func deleteTopic(named: String) {
         
         for i in 0 ..< topics.count where topics[i].name == named {
-            topics.remove(at: i)
+            _topics.remove(at: i)
         }
-        
     }
     
 }
