@@ -64,4 +64,8 @@ extension TopicsList {
         }
     }
     
+    func deleteTopic(at index: Int) {
+        _topics.remove(at: index)
+    }
+    
 }

@@ -38,9 +38,30 @@ class MainViewController: UIViewController {
         PersistenceManager.shared.storeData()
     }
     
+    private func addArea() {
+        performSegue(withIdentifier: "addArea", sender: nil)
+    }
+    
+    private func addTopic() {
+        performSegue(withIdentifier: "addTopic", sender: nil)
+    }
+    
     // MARK: -
-
-    @IBAction func getNextTopicButtonTouched(_ sender: UIButton) {
+    
+    @IBAction func didTouchAddButton(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add New", message: "Select what you want to add", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Area", style: .default, handler: { (_) in
+            self.addArea()
+        }))
+        alert.addAction(UIAlertAction(title: "Topic", style: .default, handler: { (_) in
+            self.addTopic()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in }))
+        
+        present(alert, animated: true)
+    }
+    
+    @IBAction func didTouchGetNextTopicButton(_ sender: UIButton) {
     }
 }
 

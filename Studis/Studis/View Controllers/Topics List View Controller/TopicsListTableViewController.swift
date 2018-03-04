@@ -10,9 +10,21 @@ import UIKit
 
 class TopicsListTableViewController: UITableViewController {
 
+    var viewModel: TopicsListViewViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let area1 = Area(name: "College")
+        area1.topicsManager.addTopic(name: "Database class")
+        area1.topicsManager.addTopic(name: "Algorithms class")
+        
+        let area2 = Area(name: "iOS Dev")
+        area2.topicsManager.addTopic(name: "Core Data")
+        area2.topicsManager.addTopic(name: "Coding Challenges")
+        
+        viewModel = TopicsListViewViewModel(areas: [area1,area2])
         
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
     }
@@ -21,48 +33,44 @@ class TopicsListTableViewController: UITableViewController {
         PersistenceManager.shared.storeData()
     }
 
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return viewModel.numberOfAreas()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return viewModel.numberOfTopics(section: section)
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = viewModel.getTopicName(section: indexPath.section, row: indexPath.row)
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.getAreaName(at: section)
+    }
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            viewModel.deleteTopic(section: indexPath.section, row: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
