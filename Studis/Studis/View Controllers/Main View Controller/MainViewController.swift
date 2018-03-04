@@ -19,6 +19,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+    }
+    
+    @objc func appMovedToBackground() {
+        PersistenceManager.shared.storeData()
     }
     
     // MARK: -

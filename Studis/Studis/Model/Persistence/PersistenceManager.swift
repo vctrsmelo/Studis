@@ -15,7 +15,11 @@ class PersistenceManager {
     
     static let shared = PersistenceManager()
     
-    private(set) var areas: Set<Area> = []
+    private(set) var areas: Set<Area> = [] {
+        didSet {
+            print(areas)
+        }
+    }
     
     private init() { }
     

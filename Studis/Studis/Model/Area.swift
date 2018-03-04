@@ -15,7 +15,7 @@ struct Area: Codable {
 
 extension Area: Hashable {
     
-    static func ==(lhs: Area, rhs: Area) -> Bool {
+    static func == (lhs: Area, rhs: Area) -> Bool {
         return lhs.name == rhs.name
     }
     

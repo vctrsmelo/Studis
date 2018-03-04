@@ -10,7 +10,6 @@
 		BE45589920495A8500909B03 /* TopicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45589820495A8500909B03 /* TopicsManager.swift */; };
 		BE4558A720495B7200909B03 /* StudisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4558A620495B7200909B03 /* StudisTests.swift */; };
 		BE4558B22049663E00909B03 /* TopicsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4558B12049663E00909B03 /* TopicsList.swift */; };
-		BEEDF971204B74F40099AC06 /* Disk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEDF970204B74F40099AC06 /* Disk.framework */; };
 		BEEDF974204B7EDE0099AC06 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF973204B7EDE0099AC06 /* Area.swift */; };
 		BEEDF976204B81FF0099AC06 /* FileNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF975204B81FF0099AC06 /* FileNames.swift */; };
 		BEEDF978204B87400099AC06 /* TopicsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF977204B87400099AC06 /* TopicsListTableViewController.swift */; };
@@ -21,7 +20,8 @@
 		BEEDF986204B89D20099AC06 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF985204B89D20099AC06 /* MainViewViewModel.swift */; };
 		BEEDF988204B89E10099AC06 /* TopicsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF987204B89E10099AC06 /* TopicsListViewViewModel.swift */; };
 		BEEDF98A204B8B790099AC06 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF989204B8B790099AC06 /* PersistenceManager.swift */; };
-		BEEDF991204B97320099AC06 /* Disk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEDF970204B74F40099AC06 /* Disk.framework */; };
+		BEEDF994204B99C00099AC06 /* Disk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEDF993204B99C00099AC06 /* Disk.framework */; };
+		BEEDF998204B9A610099AC06 /* PersistenceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF997204B9A610099AC06 /* PersistenceManagerTests.swift */; };
 		EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */; };
 		EE79AEBD2048942E00DC6FDE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBC2048942E00DC6FDE /* MainViewController.swift */; };
 		EE79AEC02048942E00DC6FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEBE2048942E00DC6FDE /* Main.storyboard */; };
@@ -29,6 +29,18 @@
 		EE79AEC52048942F00DC6FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEC32048942F00DC6FDE /* LaunchScreen.storyboard */; };
 		EE79AECD2048946B00DC6FDE /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AECC2048946B00DC6FDE /* Topic.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		BEEDF995204B99D10099AC06 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		BE4558A920495B7200909B03 /* PBXContainerItemProxy */ = {
@@ -46,7 +58,6 @@
 		BE4558A620495B7200909B03 /* StudisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudisTests.swift; sourceTree = "<group>"; };
 		BE4558A820495B7200909B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4558B12049663E00909B03 /* TopicsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsList.swift; sourceTree = "<group>"; };
-		BEEDF970204B74F40099AC06 /* Disk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Disk.framework; path = Carthage/Build/iOS/Disk.framework; sourceTree = "<group>"; };
 		BEEDF973204B7EDE0099AC06 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		BEEDF975204B81FF0099AC06 /* FileNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNames.swift; sourceTree = "<group>"; };
 		BEEDF977204B87400099AC06 /* TopicsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsListTableViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +68,8 @@
 		BEEDF985204B89D20099AC06 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		BEEDF987204B89E10099AC06 /* TopicsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsListViewViewModel.swift; sourceTree = "<group>"; };
 		BEEDF989204B8B790099AC06 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		BEEDF993204B99C00099AC06 /* Disk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Disk.framework; path = Carthage/Build/iOS/Disk.framework; sourceTree = "<group>"; };
+		BEEDF997204B9A610099AC06 /* PersistenceManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManagerTests.swift; sourceTree = "<group>"; };
 		EE79AEB72048942E00DC6FDE /* Studis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Studis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE79AEBC2048942E00DC6FDE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEDF991204B97320099AC06 /* Disk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEDF971204B74F40099AC06 /* Disk.framework in Frameworks */,
+				BEEDF994204B99C00099AC06 /* Disk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				BE4558A620495B7200909B03 /* StudisTests.swift */,
+				BEEDF997204B9A610099AC06 /* PersistenceManagerTests.swift */,
 				BE4558A820495B7200909B03 /* Info.plist */,
 			);
 			path = StudisTests;
@@ -159,7 +172,7 @@
 		BEEDF96F204B74F40099AC06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BEEDF970204B74F40099AC06 /* Disk.framework */,
+				BEEDF993204B99C00099AC06 /* Disk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -282,8 +295,10 @@
 				EE79AEB42048942E00DC6FDE /* Frameworks */,
 				EE79AEB52048942E00DC6FDE /* Resources */,
 				BE4558AF2049650B00909B03 /* ShellScript */,
+				BEEDF996204B99DB0099AC06 /* ShellScript */,
 			);
 			buildRules = (
+				BEEDF995204B99D10099AC06 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -366,6 +381,21 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		BEEDF996204B99DB0099AC06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Disk.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Disk.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE4558A720495B7200909B03 /* StudisTests.swift in Sources */,
+				BEEDF998204B9A610099AC06 /* PersistenceManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

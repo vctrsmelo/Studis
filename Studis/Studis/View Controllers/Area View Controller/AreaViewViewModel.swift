@@ -12,7 +12,8 @@ struct AreaViewViewModel {
     
     var areaName: String? {
         didSet {
-            
+            guard let areaName = areaName else { return }
+            PersistenceManager.shared.addArea(name: areaName)
         }
     }
     

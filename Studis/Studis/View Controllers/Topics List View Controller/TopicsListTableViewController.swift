@@ -13,7 +13,14 @@ class TopicsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
     }
+    
+    @objc func appMovedToBackground() {
+        PersistenceManager.shared.storeData()
+    }
+
 
     // MARK: - Table view data source
 
