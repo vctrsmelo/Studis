@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Disk
 
 class PersistenceManager {
 
@@ -35,11 +36,19 @@ class PersistenceManager {
     }
     
     func fetchData() {
-        // TODO: - Implement
+        do {
+            self.areas = try Disk.retrieve(FileNames.area.rawValue, from: .documents, as: Set<Area>.self)
+        } catch {
+            fatalError("Couldn't fetch data: \(error.localizedDescription)")
+        }
     }
     
     func storeData() {
-        // TODO: - Implement
+        do {
+            try Disk.save(areas, to: .documents, as: FileNames.area.rawValue)
+        } catch {
+            fatalError("Couldn't store data: \(error.localizedDescription)")
+        }
     }
     
 }

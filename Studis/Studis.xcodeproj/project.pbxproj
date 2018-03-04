@@ -21,6 +21,7 @@
 		BEEDF986204B89D20099AC06 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF985204B89D20099AC06 /* MainViewViewModel.swift */; };
 		BEEDF988204B89E10099AC06 /* TopicsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF987204B89E10099AC06 /* TopicsListViewViewModel.swift */; };
 		BEEDF98A204B8B790099AC06 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF989204B8B790099AC06 /* PersistenceManager.swift */; };
+		BEEDF991204B97320099AC06 /* Disk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEDF970204B74F40099AC06 /* Disk.framework */; };
 		EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */; };
 		EE79AEBD2048942E00DC6FDE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBC2048942E00DC6FDE /* MainViewController.swift */; };
 		EE79AEC02048942E00DC6FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEBE2048942E00DC6FDE /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEDF991204B97320099AC06 /* Disk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +435,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StudisTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.StudisTests;
@@ -449,6 +455,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StudisTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.StudisTests;
