@@ -10,6 +10,9 @@
 		BE45589920495A8500909B03 /* TopicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45589820495A8500909B03 /* TopicsManager.swift */; };
 		BE4558A720495B7200909B03 /* StudisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4558A620495B7200909B03 /* StudisTests.swift */; };
 		BE4558B22049663E00909B03 /* TopicsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4558B12049663E00909B03 /* TopicsList.swift */; };
+		BEEDF971204B74F40099AC06 /* Disk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEDF970204B74F40099AC06 /* Disk.framework */; };
+		BEEDF974204B7EDE0099AC06 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF973204B7EDE0099AC06 /* Area.swift */; };
+		BEEDF976204B81FF0099AC06 /* FileNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF975204B81FF0099AC06 /* FileNames.swift */; };
 		EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */; };
 		EE79AEBD2048942E00DC6FDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBC2048942E00DC6FDE /* ViewController.swift */; };
 		EE79AEC02048942E00DC6FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEBE2048942E00DC6FDE /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 		BE4558A620495B7200909B03 /* StudisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudisTests.swift; sourceTree = "<group>"; };
 		BE4558A820495B7200909B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4558B12049663E00909B03 /* TopicsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsList.swift; sourceTree = "<group>"; };
+		BEEDF970204B74F40099AC06 /* Disk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Disk.framework; path = Carthage/Build/iOS/Disk.framework; sourceTree = "<group>"; };
+		BEEDF973204B7EDE0099AC06 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		BEEDF975204B81FF0099AC06 /* FileNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNames.swift; sourceTree = "<group>"; };
 		EE79AEB72048942E00DC6FDE /* Studis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Studis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE79AEBC2048942E00DC6FDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEDF971204B74F40099AC06 /* Disk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,12 +135,29 @@
 			path = "Topic Managers";
 			sourceTree = "<group>";
 		};
+		BEEDF96F204B74F40099AC06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEEDF970204B74F40099AC06 /* Disk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEEDF972204B7D480099AC06 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				BEEDF975204B81FF0099AC06 /* FileNames.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		EE79AEAE2048942E00DC6FDE = {
 			isa = PBXGroup;
 			children = (
 				EE79AEB92048942E00DC6FDE /* Studis */,
 				BE4558A520495B7200909B03 /* StudisTests */,
 				EE79AEB82048942E00DC6FDE /* Products */,
+				BEEDF96F204B74F40099AC06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,9 +186,11 @@
 		EE79AECE2048946F00DC6FDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BEEDF972204B7D480099AC06 /* Persistence */,
 				BE45589A20495A8900909B03 /* Protocols */,
 				BE4558AE2049637A00909B03 /* Topic Managers */,
 				EE79AECC2048946B00DC6FDE /* Topic.swift */,
+				BEEDF973204B7EDE0099AC06 /* Area.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +327,8 @@
 				EE79AECD2048946B00DC6FDE /* Topic.swift in Sources */,
 				BE4558B22049663E00909B03 /* TopicsList.swift in Sources */,
 				BE45589920495A8500909B03 /* TopicsManager.swift in Sources */,
+				BEEDF974204B7EDE0099AC06 /* Area.swift in Sources */,
+				BEEDF976204B81FF0099AC06 /* FileNames.swift in Sources */,
 				EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +508,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Studis/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.Studis;
@@ -495,6 +527,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y93HUJS49V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Studis/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.victormelo.Studis;

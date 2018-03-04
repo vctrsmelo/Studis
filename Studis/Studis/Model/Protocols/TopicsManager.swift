@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TopicsManager {
+protocol TopicsManager: Codable {
     
     var topics: [Topic] { get }
     

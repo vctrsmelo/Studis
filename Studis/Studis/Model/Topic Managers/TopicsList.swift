@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TopicsList {
+class TopicsList: TopicsManager {
     
     private var _topics: [Topic] = [] {
         didSet {
@@ -18,7 +18,7 @@ class TopicsList {
     
 }
 
-extension TopicsList: TopicsManager {
+extension TopicsList {
     
     var topics: [Topic] {
         return _topics
