@@ -22,7 +22,6 @@ class TopicViewController: UIViewController {
     }
 
     // MARK: -
-    
 
     /*
     // MARK: - Navigation

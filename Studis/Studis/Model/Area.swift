@@ -12,3 +12,15 @@ struct Area: Codable {
     var name: String
     var topicsManager: TopicsList
 }
+
+extension Area: Hashable {
+    
+    static func ==(lhs: Area, rhs: Area) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    var hashValue: Int {
+        return name.hashValue
+    }
+    
+}

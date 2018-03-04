@@ -16,6 +16,11 @@
 		BEEDF978204B87400099AC06 /* TopicsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF977204B87400099AC06 /* TopicsListTableViewController.swift */; };
 		BEEDF97E204B879C0099AC06 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF97D204B879C0099AC06 /* TopicViewController.swift */; };
 		BEEDF980204B87A50099AC06 /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF97F204B87A50099AC06 /* AreaViewController.swift */; };
+		BEEDF982204B89B70099AC06 /* AreaViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF981204B89B70099AC06 /* AreaViewViewModel.swift */; };
+		BEEDF984204B89C80099AC06 /* TopicViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF983204B89C80099AC06 /* TopicViewViewModel.swift */; };
+		BEEDF986204B89D20099AC06 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF985204B89D20099AC06 /* MainViewViewModel.swift */; };
+		BEEDF988204B89E10099AC06 /* TopicsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF987204B89E10099AC06 /* TopicsListViewViewModel.swift */; };
+		BEEDF98A204B8B790099AC06 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDF989204B8B790099AC06 /* PersistenceManager.swift */; };
 		EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */; };
 		EE79AEBD2048942E00DC6FDE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79AEBC2048942E00DC6FDE /* MainViewController.swift */; };
 		EE79AEC02048942E00DC6FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE79AEBE2048942E00DC6FDE /* Main.storyboard */; };
@@ -46,6 +51,11 @@
 		BEEDF977204B87400099AC06 /* TopicsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsListTableViewController.swift; sourceTree = "<group>"; };
 		BEEDF97D204B879C0099AC06 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		BEEDF97F204B87A50099AC06 /* AreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
+		BEEDF981204B89B70099AC06 /* AreaViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewViewModel.swift; sourceTree = "<group>"; };
+		BEEDF983204B89C80099AC06 /* TopicViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewViewModel.swift; sourceTree = "<group>"; };
+		BEEDF985204B89D20099AC06 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
+		BEEDF987204B89E10099AC06 /* TopicsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsListViewViewModel.swift; sourceTree = "<group>"; };
+		BEEDF989204B8B790099AC06 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		EE79AEB72048942E00DC6FDE /* Studis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Studis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE79AEBA2048942E00DC6FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE79AEBC2048942E00DC6FDE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEDF975204B81FF0099AC06 /* FileNames.swift */,
+				BEEDF989204B8B790099AC06 /* PersistenceManager.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEDF977204B87400099AC06 /* TopicsListTableViewController.swift */,
+				BEEDF987204B89E10099AC06 /* TopicsListViewViewModel.swift */,
 			);
 			path = "Topics List View Controller";
 			sourceTree = "<group>";
@@ -172,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				EE79AEBC2048942E00DC6FDE /* MainViewController.swift */,
+				BEEDF985204B89D20099AC06 /* MainViewViewModel.swift */,
 			);
 			path = "Main View Controller";
 			sourceTree = "<group>";
@@ -180,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEDF97D204B879C0099AC06 /* TopicViewController.swift */,
+				BEEDF983204B89C80099AC06 /* TopicViewViewModel.swift */,
 			);
 			path = "Topic View Controller";
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEDF97F204B87A50099AC06 /* AreaViewController.swift */,
+				BEEDF981204B89B70099AC06 /* AreaViewViewModel.swift */,
 			);
 			path = "Area View Controller";
 			sourceTree = "<group>";
@@ -368,12 +383,17 @@
 				EE79AECD2048946B00DC6FDE /* Topic.swift in Sources */,
 				BE4558B22049663E00909B03 /* TopicsList.swift in Sources */,
 				BEEDF978204B87400099AC06 /* TopicsListTableViewController.swift in Sources */,
+				BEEDF982204B89B70099AC06 /* AreaViewViewModel.swift in Sources */,
 				BE45589920495A8500909B03 /* TopicsManager.swift in Sources */,
+				BEEDF98A204B8B790099AC06 /* PersistenceManager.swift in Sources */,
 				BEEDF980204B87A50099AC06 /* AreaViewController.swift in Sources */,
 				BEEDF974204B7EDE0099AC06 /* Area.swift in Sources */,
 				BEEDF976204B81FF0099AC06 /* FileNames.swift in Sources */,
+				BEEDF986204B89D20099AC06 /* MainViewViewModel.swift in Sources */,
+				BEEDF984204B89C80099AC06 /* TopicViewViewModel.swift in Sources */,
 				EE79AEBB2048942E00DC6FDE /* AppDelegate.swift in Sources */,
 				BEEDF97E204B879C0099AC06 /* TopicViewController.swift in Sources */,
+				BEEDF988204B89E10099AC06 /* TopicsListViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

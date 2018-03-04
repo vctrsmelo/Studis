@@ -164,7 +164,11 @@
                         <viewLayoutGuide key="safeArea" id="aUw-HU-EvJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="QOA-sA-TNx">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="RnJ-1Q-tzy"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RnJ-1Q-tzy">
+                            <connections>
+                                <action selector="didTouchSaveButton:" destination="wPt-Tw-xh0" id="CZf-XT-5Kl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="areaNameTextField" destination="1RL-vb-2MB" id="Hux-4l-aXd"/>
