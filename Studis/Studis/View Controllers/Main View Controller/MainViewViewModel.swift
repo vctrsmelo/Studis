@@ -10,4 +10,6 @@ import Foundation
 
 struct MainViewViewModel {
     
+    var areaSelected: Area?
+    var areas: [Area]?
 }

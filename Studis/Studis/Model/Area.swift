@@ -15,6 +15,11 @@ struct Area: Codable {
 
 extension Area: Hashable {
     
+    init(name: String) {
+        self.name = name
+        topicsManager = TopicsList()
+    }
+    
     static func == (lhs: Area, rhs: Area) -> Bool {
         return lhs.name == rhs.name
     }

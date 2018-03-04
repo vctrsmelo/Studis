@@ -10,4 +10,10 @@ import Foundation
 
 struct TopicViewViewModel {
     
+    // MARK: - Properties
+    
+    var topicName: String?
+    var areaSelected: Area?
+    var areas: [Area]?
+    
 }
