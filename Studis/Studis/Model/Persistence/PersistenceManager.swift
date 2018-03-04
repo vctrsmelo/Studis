@@ -10,7 +10,7 @@ import Foundation
 
 class PersistenceManager {
 
-    // Mark: - Singleton
+    // MARK: - Singleton
     
     static let shared = PersistenceManager()
     
@@ -18,7 +18,7 @@ class PersistenceManager {
     
     private init() { }
     
-    // Mark: - Methods
+    // MARK: - Methods
     
     func addArea(name: String, topics: [String]? = nil) {
         let newArea = Area(name: name, topicsManager: TopicsList())
@@ -32,6 +32,14 @@ class PersistenceManager {
             return
         }
         area.topicsManager.addTopic(name: topicName)
+    }
+    
+    func fetchData() {
+        // TODO: - Implement
+    }
+    
+    func storeData() {
+        // TODO: - Implement
     }
     
 }
