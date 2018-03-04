@@ -12,7 +12,7 @@ struct Area: Codable {
     
     var name: String
     var topicsManager: TopicsList
-    
+
 }
 
 extension Area: Hashable {

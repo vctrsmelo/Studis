@@ -15,13 +15,13 @@ class PersistenceManager {
     
     static let shared = PersistenceManager()
     
-    private(set) var areas: Set<Area> = [] {
-        didSet {
-            print(areas)
-        }
-    }
+    private(set) var dataFetched = false
     
-    private init() { }
+    private(set) var areas: Set<Area> = []
+    
+    private init() {
+        fetchData()
+    }
     
     // MARK: - Methods
     
@@ -42,6 +42,7 @@ class PersistenceManager {
     func fetchData() {
         do {
             self.areas = try Disk.retrieve(FileNames.area.rawValue, from: .documents, as: Set<Area>.self)
+            dataFetched = true
         } catch {
             fatalError("Couldn't fetch data: \(error.localizedDescription)")
         }

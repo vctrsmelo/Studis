@@ -10,6 +10,14 @@ import Foundation
 
 struct MainViewViewModel {
     
-    var areaSelected: Area?
-    var areas: [Area]?
+    var areaNameSelected: String?
+    var areasName: [String] = PersistenceManager.shared.areas.map { (area) -> String in
+        return area.name
+    }
+
+    mutating func sync() {
+        self.areasName = []
+        PersistenceManager.shared.areas.forEach { areasName.append($0.name) }
+    }
 }
+

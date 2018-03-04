@@ -31,10 +31,15 @@ struct TopicsListViewViewModel {
     func numberOfTopics(section: Int) -> Int {
         return _areas[section].topicsManager.topics.count
     }
+    
+    mutating func sync() {
+        self._areas = Array(PersistenceManager.shared.areas)
+    }
+    
 }
 
 extension TopicsListViewViewModel {
-    public init(areas: [Area]) {
-        self._areas = areas
+    public init() {
+        self._areas = Array(PersistenceManager.shared.areas)
     }
 }

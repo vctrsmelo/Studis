@@ -26,7 +26,6 @@ class TopicViewController: UIViewController {
         
         if viewModel == nil {
             viewModel = TopicViewViewModel()
-            viewModel.areas = [Area(name: "College"), Area(name: "iOS Dev")]
         }
         
         areaPickerView.dataSource = self
@@ -38,6 +37,13 @@ class TopicViewController: UIViewController {
     @IBAction func didTouchSaveButton(_ sender: UIBarButtonItem) {
         guard let topicName = topicNameTextField.text, !topicName.isEmpty else { return }
         viewModel.topicName = topicName
+ 
+        if viewModel.areaSelectedName == nil {
+            viewModel.areaSelectedName = viewModel.areasName[areaPickerView.selectedRow(inComponent: 0)]
+        }
+        
+        viewModel.saveTopic()
+        _ = navigationController?.popViewController(animated: true)
     }
     
     /*
@@ -59,15 +65,14 @@ extension TopicViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.areas?.count ?? 0
+        return viewModel.areasName.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        viewModel.areaSelected = viewModel.areas?[row]
+        viewModel.areaSelectedName = viewModel.areasName[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.areas?[row].name ?? "ERROR"
+        return viewModel.areasName[row]
     }
-    
 }

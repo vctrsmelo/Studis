@@ -13,7 +13,18 @@ struct TopicViewViewModel {
     // MARK: - Properties
     
     var topicName: String?
-    var areaSelected: Area?
-    var areas: [Area]?
+    var areaSelectedName: String?
+    var areasName: [String] = PersistenceManager.shared.areas.map { (area) -> String in
+        return area.name
+    }
+    
+    func saveTopic() {
+        guard let topicName = topicName, let areaSelectedName = areaSelectedName else {
+            print("Couldn't save topic")
+            return
+        }
+        
+        PersistenceManager.shared.addTopic(name: topicName, area: areaSelectedName)
+    }
     
 }

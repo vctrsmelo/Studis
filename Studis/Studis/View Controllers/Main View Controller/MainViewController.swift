@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel = MainViewViewModel()
-        viewModel.areas = [Area(name: "College"), Area(name: "iOS Dev")]
         
         areaPickerView.dataSource = self
         areaPickerView.delegate = self
@@ -33,6 +32,12 @@ class MainViewController: UIViewController {
         //when moves to background, save data
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.sync()
+    }
+    
+    // MARK: -
     
     @objc func appMovedToBackground() {
         PersistenceManager.shared.storeData()
@@ -72,15 +77,15 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.areas?.count ?? 0
+        return viewModel.areasName.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        viewModel.areaSelected = viewModel.areas?[row]
+        viewModel.areaNameSelected = viewModel.areasName[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.areas?[row].name ?? "ERROR"
+        return viewModel.areasName[row]
     }
     
 }

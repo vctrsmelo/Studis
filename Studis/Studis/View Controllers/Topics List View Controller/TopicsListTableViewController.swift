@@ -12,22 +12,22 @@ class TopicsListTableViewController: UITableViewController {
 
     var viewModel: TopicsListViewViewModel!
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        let area1 = Area(name: "College")
-        area1.topicsManager.addTopic(name: "Database class")
-        area1.topicsManager.addTopic(name: "Algorithms class")
-        
-        let area2 = Area(name: "iOS Dev")
-        area2.topicsManager.addTopic(name: "Core Data")
-        area2.topicsManager.addTopic(name: "Coding Challenges")
-        
-        viewModel = TopicsListViewViewModel(areas: [area1,area2])
+
+        viewModel = TopicsListViewViewModel()
         
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.sync()
+    }
+    
+    // MARK: -
     
     @objc func appMovedToBackground() {
         PersistenceManager.shared.storeData()

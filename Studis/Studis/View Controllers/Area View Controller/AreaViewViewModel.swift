@@ -17,4 +17,13 @@ struct AreaViewViewModel {
         }
     }
     
+    func saveArea() {
+        guard let areaName = areaName else {
+            print("Couldn't save area")
+            return
+        }
+        
+        PersistenceManager.shared.addArea(name: areaName)
+    }
+    
 }
