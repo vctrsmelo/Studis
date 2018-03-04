@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var selectedTopicNameLabel: UILabel!
     @IBOutlet weak var areaPickerView: UIPickerView!
     @IBOutlet weak var getNextTopicButton: UIButton!
+    @IBOutlet weak var topicsAndAreasButton: UIBarButtonItem!
     
     // MARK: -
     
@@ -34,6 +35,8 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.sync()
         areaPickerView.reloadComponent(0)
+        topicsAndAreasButton.isEnabled = false
+        topicsAndAreasButton.isEnabled = true
     }
     
     // MARK: -

@@ -13,6 +13,7 @@ protocol TopicsManager: Codable {
     var topics: [Topic] { get }
     
     func addTopic(name: String)
+    func updateTopic(oldName: String, newName: String)
     func getNextTopic() -> Topic?
     func getNextTopics(quantity: Int) -> [Topic]
     func deleteTopic(named: String)

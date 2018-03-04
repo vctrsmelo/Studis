@@ -28,6 +28,8 @@ class TopicViewController: UIViewController {
             viewModel = TopicViewViewModel()
         }
         
+        topicNameTextField.text = viewModel.topicName
+        
         areaPickerView.dataSource = self
         areaPickerView.delegate = self
     }

@@ -11,8 +11,16 @@ import Foundation
 struct TopicViewViewModel {
     
     // MARK: - Properties
+    var isEditingTopic = false
+    var oldName: String?
     
-    var topicName: String?
+    var topicName: String? {
+        didSet {
+            if oldValue == nil {
+                oldName = topicName
+            }
+        }
+    }
     
     var selectedAreaIndex: Int = 0
     
@@ -28,7 +36,17 @@ struct TopicViewViewModel {
         
         let areaSelectedName = areasName[selectedAreaIndex]
         
-        PersistenceManager.shared.addTopic(name: topicName, area: areaSelectedName)
+        if isEditingTopic {
+            
+            guard let oldName = oldName else {
+                print("Couldn't update topic")
+                return
+            }
+            
+            PersistenceManager.shared.updateTopic(oldName: oldName, newName: topicName, area: areaSelectedName)
+        } else {
+            PersistenceManager.shared.addTopic(name: topicName, area: areaSelectedName)
+        }
     }
     
 }

@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Topic Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0S-sZ-V4n">
-                                <rect key="frame" x="106" y="212" width="163" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Topic Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0S-sZ-V4n">
+                                <rect key="frame" x="0.0" y="212" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,6 +38,11 @@
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="M0S-sZ-V4n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ASN-dl-Nao"/>
+                            <constraint firstItem="M0S-sZ-V4n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="Tgf-CY-Fuw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M0S-sZ-V4n" secondAttribute="trailing" id="fX7-yq-4pZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YDv-MD-Drq">
@@ -49,7 +53,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Topics and Areas" id="Zju-bK-ws9">
                             <connections>
-                                <segue destination="QJf-3K-mjc" kind="show" id="f2u-3K-DeR"/>
+                                <segue destination="QJf-3K-mjc" kind="show" id="aUq-Nm-Mhj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -57,6 +61,7 @@
                         <outlet property="areaPickerView" destination="gaL-St-bMu" id="Jz9-Y1-5ke"/>
                         <outlet property="getNextTopicButton" destination="RIC-Kl-tOq" id="n0D-Bw-3Hb"/>
                         <outlet property="selectedTopicNameLabel" destination="M0S-sZ-V4n" id="Gmh-vW-9nk"/>
+                        <outlet property="topicsAndAreasButton" destination="Zju-bK-ws9" id="lv3-2x-Rt6"/>
                         <segue destination="wPt-Tw-xh0" kind="show" identifier="addArea" id="6lu-Md-LMv"/>
                         <segue destination="23U-by-qLa" kind="show" identifier="addTopic" id="fCx-JD-vmG"/>
                     </connections>
@@ -90,9 +95,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="23U-by-qLa" kind="show" identifier="editCell" id="kDA-0R-mTl"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -114,12 +116,16 @@
                             </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <segue destination="23U-by-qLa" kind="show" identifier="editTopic" id="zjw-eE-VGB"/>
+                        <segue destination="wPt-Tw-xh0" kind="show" identifier="editArea" id="Ddo-a6-Nqf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5Q-IZ-V06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2239" y="160"/>
         </scene>
-        <!--New Topic-->
+        <!--Topic-->
         <scene sceneID="LvQ-RI-5yY">
             <objects>
                 <viewController id="23U-by-qLa" customClass="TopicViewController" customModule="Studis" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,7 +148,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HjF-Jp-zsQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Topic" id="g90-0V-e3h">
+                    <navigationItem key="navigationItem" title="Topic" id="g90-0V-e3h">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="jbu-fM-hH3">
                             <connections>
                                 <action selector="didTouchSaveButton:" destination="23U-by-qLa" id="a6D-rB-xFT"/>
@@ -176,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="612.79999999999995" y="98.950524737631198"/>
         </scene>
-        <!--New Area-->
+        <!--Area-->
         <scene sceneID="NKH-di-Aox">
             <objects>
                 <viewController id="wPt-Tw-xh0" customClass="AreaViewController" customModule="Studis" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,7 +201,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aUw-HU-EvJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Area" id="QOA-sA-TNx">
+                    <navigationItem key="navigationItem" title="Area" id="QOA-sA-TNx">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="RnJ-1Q-tzy">
                             <connections>
                                 <action selector="didTouchSaveButton:" destination="wPt-Tw-xh0" id="CZf-XT-5Kl"/>
@@ -208,10 +214,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Way-Yn-rG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392.8" y="562.66866566716647"/>
+            <point key="canvasLocation" x="1439" y="947"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kDA-0R-mTl"/>
+        <segue reference="6lu-Md-LMv"/>
+        <segue reference="fCx-JD-vmG"/>
     </inferredMetricsTieBreakers>
 </document>

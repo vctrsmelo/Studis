@@ -27,6 +27,7 @@ class TopicsListTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         viewModel.sync()
+        self.tableView.reloadData()
     }
     
     // MARK: - Segmented Control
@@ -89,5 +90,49 @@ class TopicsListTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isShowingTopics {
+            performSegue(withIdentifier: "editTopic", sender: viewModel.getTopicName(section: indexPath.section, row: indexPath.row))
+        } else {
+            performSegue(withIdentifier: "editArea", sender: viewModel.getAreaName(at: indexPath.row))
+        }
+    }
+    
+    // MARK: - Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "editTopic":
+            guard let topicName = sender as? String else {
+                fatalError("Couldn't cast to string into prepare for segue")
+            }
+            
+            guard let editTopicViewController = segue.destination as? TopicViewController else { return }
+    
+            var topicViewModel = TopicViewViewModel()
+            topicViewModel.isEditingTopic = true
+            topicViewModel.topicName = topicName
+            
+            editTopicViewController.viewModel = topicViewModel
+            
+        case "editArea":
+            guard let areaName = sender as? String else {
+                fatalError("Couldn't cast to string into prepare for segue")
+            }
+            
+            guard let editAreaViewController = segue.destination as? AreaViewController else { return }
+            
+            var areaViewModel = AreaViewViewModel()
+            areaViewModel.isEditingArea = true
+            areaViewModel.areaName = areaName
+            
+            editAreaViewController.viewModel = areaViewModel
+            
+        default:
+            break
+        }
     }
 }

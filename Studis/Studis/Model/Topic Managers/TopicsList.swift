@@ -29,6 +29,15 @@ extension TopicsList {
         _topics.append(topic)
     }
     
+    func updateTopic(oldName: String, newName: String) {
+        
+        for i in 0 ..< _topics.count where _topics[i].name == oldName {
+            _topics[i].name = newName
+            break
+        }
+        
+    }
+    
     func getNextTopic() -> Topic? {
         guard var nextTopic = topics.first else { return nil }
         _topics.remove(at: 0)
@@ -67,5 +76,4 @@ extension TopicsList {
     func deleteTopic(at index: Int) {
         _topics.remove(at: index)
     }
-    
 }

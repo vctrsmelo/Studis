@@ -48,12 +48,29 @@ class PersistenceManager {
         area.topicsManager.addTopic(name: topicName)
     }
     
+    func updateTopic(oldName: String, newName: String, area areaName: String) {
+        guard let area = areas.first(where: {$0.name == areaName }) else {
+            print("Couldn't find area")
+            return
+        }
+        
+        area.topicsManager.updateTopic(oldName: oldName, newName: newName)
+    }
+    
+    func updateArea(oldName: String, newName: String) {
+        guard var area = areas.first(where: {$0.name == oldName}) else { return }
+        deleteArea(name: oldName)
+        area.name = newName
+        areas.insert(area)
+    }
+    
     func fetchData() {
         do {
             self.areas = try Disk.retrieve(FileNames.area.rawValue, from: .documents, as: Set<Area>.self)
             dataFetched = true
         } catch {
-            fatalError("Couldn't fetch data: \(error.localizedDescription)")
+            print("Couldn't fetch data")
+
         }
     }
     

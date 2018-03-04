@@ -26,11 +26,14 @@ class AreaViewController: UIViewController {
             self.viewModel = AreaViewViewModel()
         }
         
+        areaNameTextField.text = viewModel.areaName
+        
     }
     
     @IBAction func didTouchSaveButton(_ sender: UIBarButtonItem) {
         guard let areaName = areaNameTextField.text, !areaName.isEmpty else { return }
         viewModel.areaName = areaName
+        viewModel.saveArea()
         _ = navigationController?.popViewController(animated: true)
     }
     

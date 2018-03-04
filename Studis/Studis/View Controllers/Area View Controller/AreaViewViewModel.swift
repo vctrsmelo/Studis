@@ -10,10 +10,14 @@ import Foundation
 
 struct AreaViewViewModel {
     
+    var isEditingArea = false
+    var oldName: String?
+    
     var areaName: String? {
         didSet {
-            guard let areaName = areaName else { return }
-            PersistenceManager.shared.addArea(name: areaName)
+            if oldValue == nil {
+                oldName = areaName
+            }
         }
     }
     
@@ -23,7 +27,18 @@ struct AreaViewViewModel {
             return
         }
         
-        PersistenceManager.shared.addArea(name: areaName)
+        if isEditingArea {
+            
+            guard let oldName = oldName else {
+                print("Couldn't update area")
+                return
+            }
+            
+            PersistenceManager.shared.updateArea(oldName: oldName, newName: areaName)
+        } else {
+            PersistenceManager.shared.addArea(name: areaName)
+        }
+        
     }
     
 }
