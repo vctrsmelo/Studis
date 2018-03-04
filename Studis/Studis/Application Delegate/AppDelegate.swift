@@ -18,4 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        PersistenceManager.shared.storeData()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        PersistenceManager.shared.storeData()
+    }
+    
 }

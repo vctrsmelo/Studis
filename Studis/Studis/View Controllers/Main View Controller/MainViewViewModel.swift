@@ -10,7 +10,7 @@ import Foundation
 
 struct MainViewViewModel {
     
-    var areaNameSelected: String?
+    var selectedAreaIndex = 0
     var areasName: [String] = PersistenceManager.shared.areas.map { (area) -> String in
         return area.name
     }
@@ -19,5 +19,9 @@ struct MainViewViewModel {
         self.areasName = []
         PersistenceManager.shared.areas.forEach { areasName.append($0.name) }
     }
+    
+    func getNextTopicName() -> String? {
+        let area = PersistenceManager.shared.areas.first { $0.name == areasName[selectedAreaIndex]}
+        return area?.topicsManager.getNextTopic()?.name
+    }
 }
-

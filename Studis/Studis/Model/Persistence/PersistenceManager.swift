@@ -31,6 +31,15 @@ class PersistenceManager {
         areas.insert(newArea)
     }
     
+    func deleteArea(name: String) {
+        guard let deletedArea = areas.first(where: { $0.name == name }) else {
+            print("Couldn't delete area")
+            return
+        }
+        
+        areas.remove(deletedArea)
+    }
+    
     func addTopic(name topicName: String, area areaName: String) {
         guard let area = areas.first(where: {$0.name == areaName }) else {
             print("Couldn't find area")

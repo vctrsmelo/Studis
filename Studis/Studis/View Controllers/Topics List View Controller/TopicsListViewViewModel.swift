@@ -24,6 +24,12 @@ struct TopicsListViewViewModel {
         _areas[section].topicsManager.deleteTopic(at: row)
     }
     
+    mutating func deleteArea(at row: Int) {
+        let deletedAreaName = _areas[row].name
+        _areas.remove(at: row)
+        PersistenceManager.shared.deleteArea(name: deletedAreaName)
+    }
+    
     func numberOfAreas() -> Int {
         return _areas.count
     }

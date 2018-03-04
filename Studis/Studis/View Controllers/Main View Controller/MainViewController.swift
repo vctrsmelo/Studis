@@ -28,21 +28,16 @@ class MainViewController: UIViewController {
         
         areaPickerView.dataSource = self
         areaPickerView.delegate = self
-        
-        //when moves to background, save data
-        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.sync()
+        areaPickerView.reloadComponent(0)
     }
     
     // MARK: -
-    
-    @objc func appMovedToBackground() {
-        PersistenceManager.shared.storeData()
-    }
-    
+
     private func addArea() {
         performSegue(withIdentifier: "addArea", sender: nil)
     }
@@ -67,6 +62,8 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didTouchGetNextTopicButton(_ sender: UIButton) {
+        guard let nextTopicName = viewModel.getNextTopicName() else { return }
+        selectedTopicNameLabel.text = nextTopicName
     }
 }
 
@@ -81,7 +78,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        viewModel.areaNameSelected = viewModel.areasName[row]
+        viewModel.selectedAreaIndex = row
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
