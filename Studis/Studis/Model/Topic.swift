@@ -18,6 +18,11 @@ struct Topic: Codable {
         let lastReviewWeight = lastReview ?? 0
         return Double(reviewsCount)*(100*lastReviewWeight/Date().timeIntervalSince1970)
     }
+    
+    mutating func addReview(at date: Date? = nil ) {
+        reviewsCount += 1
+        lastReview = (date ?? Date()).timeIntervalSince1970
+    }
 }
 
 extension Topic {

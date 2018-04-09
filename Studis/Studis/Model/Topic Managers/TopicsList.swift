@@ -31,8 +31,8 @@ extension TopicsList {
     
     func updateTopic(oldName: String, newName: String) {
         
-        for i in 0 ..< _topics.count where _topics[i].name == oldName {
-            _topics[i].name = newName
+        for index in 0 ..< _topics.count where _topics[index].name == oldName {
+            _topics[index].name = newName
             break
         }
         
@@ -42,11 +42,24 @@ extension TopicsList {
         guard var nextTopic = topics.first else { return nil }
         _topics.remove(at: 0)
         
+        nextTopic.addReview()
+
         nextTopic.reviewsCount += 1
         nextTopic.lastReview = Date().timeIntervalSince1970
         _topics.append(nextTopic)
         
         return nextTopic
+    }
+    
+    /**
+     Used when user want to actively review an specific topic
+    */
+    func addAReviewToTopic(named topicName: String) {
+        guard var topic = topics.first(where: { $0.name == topicName }) else { print("Topic not found"); return }
+        let index = topics.indexOf(topic)
+        _topics.remove(at: index)
+        topic.addReview()
+        _topics.append(topic)
     }
     
     func getNextTopics(quantity: Int) -> [Topic] {
@@ -55,9 +68,9 @@ extension TopicsList {
         
         let now = Date().timeIntervalSince1970
         
-        for i in 0 ..< selectedTopics.count {
-            selectedTopics[i].lastReview = now
-            selectedTopics[i].reviewsCount += 1
+        for index in 0 ..< selectedTopics.count {
+            selectedTopics[index].lastReview = now
+            selectedTopics[index].reviewsCount += 1
         }
         
         self._topics.append(contentsOf: selectedTopics)
@@ -67,8 +80,8 @@ extension TopicsList {
     
     func deleteTopic(named: String) {
         
-        for i in 0 ..< topics.count where topics[i].name == named {
-            _topics.remove(at: i)
+        for index in 0 ..< topics.count where topics[index].name == named {
+            _topics.remove(at: index)
             break
         }
     }

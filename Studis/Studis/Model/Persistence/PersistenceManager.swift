@@ -32,27 +32,18 @@ class PersistenceManager {
     }
     
     func deleteArea(name: String) {
-        guard let deletedArea = areas.first(where: { $0.name == name }) else {
-            print("Couldn't delete area")
-            return
-        }
+        guard let deletedArea = getArea(named: name) else { return }
         
         areas.remove(deletedArea)
     }
     
     func addTopic(name topicName: String, area areaName: String) {
-        guard let area = areas.first(where: {$0.name == areaName }) else {
-            print("Couldn't find area")
-            return
-        }
+        guard let area = getArea(named: areaName) else { return }
         area.topicsManager.addTopic(name: topicName)
     }
     
     func updateTopic(oldName: String, newName: String, area areaName: String) {
-        guard let area = areas.first(where: {$0.name == areaName }) else {
-            print("Couldn't find area")
-            return
-        }
+        guard let area = getArea(named: areaName) else { return }
         
         area.topicsManager.updateTopic(oldName: oldName, newName: newName)
     }
@@ -62,6 +53,19 @@ class PersistenceManager {
         deleteArea(name: oldName)
         area.name = newName
         areas.insert(area)
+    }
+    
+    func addReview(topic topicName: String, area areaName: String) {
+        guard let area = getArea(named: areaName) else { return }
+        area.topicsManager.addAReviewToTopic(named: topicName)
+    }
+    
+    private func getArea(named areaName: String) -> Area? {
+        guard let area = areas.first(where: {$0.name == areaName }) else {
+            print("Couldn't find area")
+            return nil
+        }
+        return area
     }
     
     func fetchData() {

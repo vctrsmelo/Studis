@@ -14,6 +14,7 @@ class TopicViewController: UIViewController {
     
     @IBOutlet weak var topicNameTextField: UITextField!
     @IBOutlet weak var areaPickerView: UIPickerView!
+    @IBOutlet weak var addSessionButton: UIButton!
     
     // MARK: -
     
@@ -26,6 +27,7 @@ class TopicViewController: UIViewController {
         
         if viewModel == nil {
             viewModel = TopicViewViewModel()
+            addSessionButton.isHidden = true
         }
         
         topicNameTextField.text = viewModel.topicName
@@ -42,17 +44,11 @@ class TopicViewController: UIViewController {
         viewModel.saveTopic()
         _ = navigationController?.popViewController(animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTouchAddReviewSession(_ sender: UIButton) {
+        viewModel.addTopicReview()
     }
-    */
-
+    
 }
 
 extension TopicViewController: UIPickerViewDataSource, UIPickerViewDelegate {

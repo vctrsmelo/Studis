@@ -28,6 +28,11 @@ struct TopicViewViewModel {
         return area.name
     }
     
+    func addTopicReview() {
+        guard let topicName = topicName else { return }
+        PersistenceManager.shared.addReview(topic: topicName, area: areasName[selectedAreaIndex])
+    }
+    
     func saveTopic() {
         guard let topicName = topicName else {
             print("Couldn't save topic")
